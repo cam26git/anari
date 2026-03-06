@@ -1,0 +1,21 @@
+anari-platform
+│
+├── public
+│   ├── index.html
+│   ├── dashboard.html
+│   ├── tasks.html
+│   ├── finances.html
+│   ├── vehicles.html
+│   ├── calendar.html
+│   └── styles.css
+│
+├── functions
+│   ├── package.json
+│   ├── index.js
+│   ├── notifications.js
+│   └── aiAssistant.js
+│
+├── firestore.rules
+├── firestore.indexes.json
+├── firebase.json
+└── README.md
