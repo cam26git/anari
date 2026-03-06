@@ -1,0 +1,21 @@
+anari-platform
+│
+├── web-app
+│   ├── public
+│   ├── src
+│   └── package.json
+│
+├── mobile-app
+│   ├── ios
+│   ├── android
+│   └── app.js
+│
+├── firebase-functions
+│   ├── notifications
+│   ├── ai-assistant
+│   └── maintenance-predictor
+│
+├── docs
+│   └── architecture.md
+│
+└── README.md
