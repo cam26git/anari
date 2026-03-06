@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ANARI Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Welcome to ANARI</h1>
+  <p>Your personal life management system.</p>
+
+  <div class="dashboard">
+    <div class="card">
+      <h3>Tasks Today</h3>
+      <p id="taskCount">0</p>
+    </div>
+
+    <div class="card">
+      <h3>Monthly Subscriptions</h3>
+      <p id="subscriptionTotal">$0</p>
+    </div>
+
+    <div class="card">
+      <h3>Vehicle Status</h3>
+      <p id="vehicleStatus">Next Service: Unknown</p>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "anari-app.firebaseapp.com",
+      projectId: "anari-app"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    async function loadTasks() {
+      const tasksSnapshot = await getDocs(collection(db, "tasks"));
+      document.getElementById("taskCount").textContent = tasksSnapshot.size;
+    }
+
+    loadTasks();
+  </script>
+</body>
+</html>
